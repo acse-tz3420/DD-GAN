@@ -6,7 +6,6 @@ sys.path.append(".")
 from PredGAN.preprocessing import *
 from PredGAN.architectures.generators import *
 from PredGAN.architectures.discriminators import *
-from PredGAN.train_pred import *
 
 
 def test_pod_shape():
