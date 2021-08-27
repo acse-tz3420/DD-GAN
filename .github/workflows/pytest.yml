@@ -24,4 +24,4 @@ jobs:
     # Run tests
     - name: run tests
       run: |
-        python -m pytest .  --ignore=all/preprocessing
+        python -m pytest --ignore=preprocessing
