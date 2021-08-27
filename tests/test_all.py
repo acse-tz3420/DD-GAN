@@ -3,17 +3,10 @@ import numpy as np
 import sys
 sys.path.append(".")
 
-from PredMLP.preprocessing import *
-from PredMLP.architectures.mlp import *
-from PredMLP.train_pred import *
 from PredGAN.preprocessing import *
 from PredGAN.architectures.generators import *
 from PredGAN.architectures.discriminators import *
 from PredGAN.train_pred import *
-from PredAAE.models import Predictive_adversarial
-from PredAAE.architectures.cae.D2 import *
-from PredAAE.architectures.svdae import *
-from PredAAE.architectures.discriminators import *
 
 
 def test_pod_shape():
