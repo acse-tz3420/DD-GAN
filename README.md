@@ -1,12 +1,12 @@
-# X-RAY-Classifier: Solution to classify a dataset of X-Ray lung images
+# TSP-AI: Time Series Prediction with AI Methods for Fluid Flow
 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-X-RAY-Classifier is a python machine learning package to implement the solution to classify a dataset of X-Ray lung images.
+This is the repository of ACSE9 individual project. TSP-AI is a python machine learning package to implement the time series prediction of fluid flow.
 
 ## Table of Contents
 
-- [X-RAY-Classifier](#about-x-ray-classifier)
+- [About TSP-AI](#about-tsp-ai)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Documentation](#documentation)
@@ -14,23 +14,31 @@ X-RAY-Classifier is a python machine learning package to implement the solution 
 - [License](#license)
 
 
-## About X-RAY-Classifier
+## About TSP-AI
 
-X-RAY-Classifier is a solution to [X-RAY Classification](https://www.kaggle.com/c/acse4-ml-2020). The goal of this Kaggle competition is to classify a dataset of X-Ray lung images into 4 classes. These package include machine learning modules to data processing and model training with `Pytorch`. Moreover, `X-RAY-Classifier.ipynb` includes all functional parts, as well as user guidence, process of tuning parameters and strategy to select the final submission. The final output is the prediction result in `csv` format as the submission file for the competition.
+This individual project applys time derivative method and create time series multi-step prediction model, using MLP, GAN or AAE, respectively. NIROM is constructed by applying POD to snapshots of numerical simulation for the flow past a cylinder. The time derivative method is applied to the prediction, and the difference between the result of directly predicting the next time level is compared with the time derivative method to assess its validity. These package include machine learning modules to data processing, model training and multi-step prediction with `Tensorflow` and `Keras`.
+
+The multi-step predictive GAN draws on ideas from recent research [Predictive GAN](https://arxiv.org/abs/2105.07729). The predictive AAE based on [Predictive AAE](https://github.com/acse-zrw20/DD-GAN-AE). Work flows of these two models are shown below:
+
+![PredGAN](https://github.com/acse-tz3420/TSP-AI/blob/main/images/PredGAN.png)
+![PredAAE](https://github.com/acse-tz3420/TSP-AI/blob/main/images/PredAAE.png)
 
 
 ## Installation
 
-To install X-RAY-Classifier, run the following commands:
+To install TSP-AI, run the following commands:
 
 ```
 # get the code
-git clone https://github.com/acse-2020/acse-4-x-ray-classification-softmax.git
-cd acse-4-x-ray-classification-softmax
+git clone https://github.com/acse-tz3420/TSP-AI.git
+cd TSP-AI
 
 # install pre-requisites
-pip install -r requirements.txt
+ $ conda env create -f environment.yml 
+ $ conda activate tspai
+ $ python -m ipykernel install --user --name=python3
 ```
+
 
 ### Data Downloading
 
