@@ -1,0 +1,2 @@
+*.npy filter=lfs diff=lfs merge=lfs -text
+E:/mine/GitHub/TSP-AI/data/outputs/pod_coeffs_n5.npy filter=lfs diff=lfs merge=lfs -text
