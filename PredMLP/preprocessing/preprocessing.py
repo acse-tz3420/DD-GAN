@@ -56,8 +56,7 @@ def set_deriv(df, step):
     Calculate the time derivative by (a_n+1 - a_n)/step
     """
     for i in range(1, 6):
-        df["var%d(deriv)" % i] = (
-            df["var%d(t)" % i]
-            - df["var%d(t-1)" % i]) / step
+        df["var%d(deriv)" % i] = (1 / step) * (
+            df["var%d(t)" % i] - df["var%d(t-1)" % i])
         df = df.drop(columns=["var%d(t)" % i])
     return df
