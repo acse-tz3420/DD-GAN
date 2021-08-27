@@ -20,7 +20,6 @@ jobs:
         pip install pytest
         conda env create -f environment.yml
         conda activate tspai
-        python -m ipykernel install --user --name=python3
 
     # Run tests
     - name: run tests
