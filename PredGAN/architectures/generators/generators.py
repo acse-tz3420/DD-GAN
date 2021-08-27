@@ -6,7 +6,7 @@ and used by the GAN model.
 """
 
 from tensorflow.keras.layers import Dense, Conv2DTranspose, Reshape, \
-                                    BatchNormalization, LeakyReLU
+    BatchNormalization, LeakyReLU
 from tensorflow.keras.models import Sequential
 
 __author__ = "Tianyi Zhao"
