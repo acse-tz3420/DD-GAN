@@ -5,7 +5,7 @@ and used by the GAN model.
 
 """
 
-from tensorflow.keras.layers import Dense, Conv2DTranspose, Reshape,\
+from tensorflow.keras.layers import Dense, Conv2DTranspose, Reshape, \
                                     BatchNormalization, LeakyReLU
 from tensorflow.keras.models import Sequential
 
