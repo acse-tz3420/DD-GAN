@@ -20,7 +20,7 @@ __status__ = "Development"
 def make_discriminator_model(ntimes=20, ninput=20, d_dropout=0.3):
     model = Sequential()
     model.add(Conv2D(64, (3, 3), strides=(2, 2), padding='same',
-                                     input_shape=[ntimes, ninput, 1]))
+              input_shape=[ntimes, ninput, 1]))
     model.add(LeakyReLU())
     model.add(Dropout(d_dropout))
 

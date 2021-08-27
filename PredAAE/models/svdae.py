@@ -41,8 +41,10 @@ class SVDAE:
 
         Args:
             snapshots (list of ndarrays): List of arrays with subgrid
-                                          snapshots. shape:
-                                          (n_grids, n_nodes, n_timelevels)
+                                          snapshots. shape:(
+                                              n_grids, 
+                                              n_nodes, 
+                                              n_timelevels)
 
         Returns:
             list of ndarrays: POD coefficients per subgrid

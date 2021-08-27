@@ -6,7 +6,7 @@ Predictive Models
 
 from tensorflow.keras.layers import Input, Conv1D, GaussianNoise
 from tensorflow.keras.models import Model
-#import keras
+
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 import datetime
@@ -40,8 +40,7 @@ class Predictive_adversarial:
         """
         encoder = tf.keras.models.load_model(dirname + '/encoder')
         decoder = tf.keras.models.load_model(dirname + '/decoder')
-        discriminator = tf.keras.models.load_model(dirname +
-                                                '/discriminator')
+        discriminator = tf.keras.models.load_model(dirname + '/discriminator')
 
         return cls(encoder, decoder, discriminator, optimizer)
 
@@ -127,23 +126,24 @@ class Predictive_adversarial:
               batch_size=128, val_batch_size=128, wandb_log=False,
               n_discriminator=5, n_gradient_ascent=np.inf, noise_std=0):
 
-            self.interval = interval
+        self.interval = interval
 
-            x_full, y_full = self.preprocess(input_data)
+        x_full, y_full = self.preprocess(input_data)
 
-            self.train_preprocessed(x_full, y_full, epochs, interval=interval, 
-                                    val_size=val_size, val_data=val_data,
-                                    batch_size=batch_size, 
-                                    val_batch_size=val_batch_size, 
-                                    wandb_log=wandb_log,
-                                    n_discriminator=n_discriminator, 
-                                    n_gradient_ascent=n_gradient_ascent, 
-                                    noise_std=noise_std)
+        self.train_preprocessed(x_full, y_full, epochs, interval=interval, 
+                                val_size=val_size, val_data=val_data,
+                                batch_size=batch_size, 
+                                val_batch_size=val_batch_size, 
+                                wandb_log=wandb_log,
+                                n_discriminator=n_discriminator, 
+                                n_gradient_ascent=n_gradient_ascent, 
+                                noise_std=noise_std)
 
     def train_preprocessed(self, x_full, y_full, epochs, interval=5, 
                            val_size=0, val_data=None,
                            batch_size=128, val_batch_size=128, wandb_log=False,
-                           n_discriminator=5, n_gradient_ascent=np.inf, noise_std=0):
+                           n_discriminator=5, n_gradient_ascent=np.inf, 
+                           noise_std=0):
         """
         Training model where we use a training method that weights
         the losses of the discriminator and autoencoder and as such combines
@@ -170,7 +170,8 @@ class Predictive_adversarial:
         d_loss_val = g_loss_val = None
 
         if val_size > 0 and val_data is not None:
-            raise NotImplementedError("Use either val_size > 0 or supply val_data, not both")
+            raise NotImplementedError("Use either val_size > 0 or \
+                                    supply val_data, not both")
 
         if val_size > 0:
             x_train, x_val, y_train, y_val = train_test_split(
@@ -282,11 +283,15 @@ class Predictive_adversarial:
 
             hist.append([g_loss, d_loss, g_loss_val, d_loss_val])
 
-            print("discriminator", "train_loss: {:.6f}".format(hist[-1][1]), end=' - ')
-            print("generator", "train_loss: {:.6f}".format(hist[-1][0]), end=' - ')
-            print("discriminator", "val_loss: {:.6f}".format(hist[-1][3]), end=' - ')
-            print("generator", "val_loss: {:.6f}".format(hist[-1][2]), end=' - ')
-            print ('{:.0f}s'.format(time.time()-start))
+            print("discriminator", 
+                  "train_loss: {:.6f}".format(hist[-1][1]), end=' - ')
+            print("generator", 
+                  "train_loss: {:.6f}".format(hist[-1][0]), end=' - ')
+            print("discriminator", 
+                  "val_loss: {:.6f}".format(hist[-1][3]), end=' - ')
+            print("generator", 
+                  "val_loss: {:.6f}".format(hist[-1][2]), end=' - ')
+            print('{:.0f}s'.format(time.time()-start))
 
             if wandb_log:
                 if val_dataset is not None:
@@ -359,7 +364,7 @@ class Predictive_adversarial:
             timesteps (int): Number of timesteps to predict
             iters (int): Number of iterations to do before a prediction
         """
-        if pre_interval == False:
+        if pre_interval is False:
             boundaries = boundaries[:, :, ::self.interval]
 
         pred_vars = np.zeros((2 + init_values.shape[0], boundaries.shape[1],
@@ -371,7 +376,8 @@ class Predictive_adversarial:
         for i in range(timesteps):
             # Outer "timesteps" loop
             
-            if timestep_print_interval is not None and i % timestep_print_interval == 0:
+            if timestep_print_interval is not None and i % \
+                timestep_print_interval == 0:
                 print("At timestep number ", i)
 
             # Let's start with a linear extrapolation for the predictions
@@ -550,7 +556,8 @@ class Predictive:
         self.interval = interval
 
         if val_size > 0 and val_data is not None:
-            raise NotImplementedError("Use either val_size > 0 or supply val_data, not both")
+            raise NotImplementedError("Use either val_size > 0 \
+                or supply val_data, not both")
 
         x_full, y_full = self.preprocess(input_data)
 
@@ -686,7 +693,8 @@ class Predictive:
         for i in range(timesteps):
             # Outer "timesteps" loop
 
-            if timestep_print_interval is not None and i % timestep_print_interval == 0:
+            if timestep_print_interval is not None and i % \
+                timestep_print_interval == 0:
                 print("At timestep number ", i)
             
             # Let's start with a linear extrapolation for the predictions

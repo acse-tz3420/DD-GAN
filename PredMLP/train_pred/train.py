@@ -4,13 +4,9 @@ Training process of MLP.
 
 """
 
-import tensorflow as tf
-import time
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.neural_network import MLPRegressor
 from sklearn.model_selection import learning_curve
-from sklearn.model_selection import ShuffleSplit
 
 __author__ = "Tianyi Zhao"
 __credits__ = ["Vinicious L. S. Silva"]
@@ -139,15 +135,15 @@ def plot_learning_curve(estimator, title, X, y, axes=None, ylim=None, cv=None,
 def plot_acc_loss(history):
     fig, ax = plt.subplots(1, 2, figsize=[12, 4])
     ax[0].grid()
-    ax[0].plot(history['accuracy'],label='training acc')
-    ax[0].plot(history['val_accuracy'],label='val acc')
+    ax[0].plot(history['accuracy'], label='training acc')
+    ax[0].plot(history['val_accuracy'], label='val acc')
     ax[0].set_title('model accuracy')
     ax[0].set_ylabel('accuracy')
     ax[0].set_xlabel('epoch')
     ax[0].legend(loc='lower right')
-    
+
     ax[1].grid()
-    ax[1].plot(history['loss'],label='training loss')
+    ax[1].plot(history['loss'], label='training loss')
     ax[1].plot(history['val_loss'], label='val loss')
     ax[1].set_title('model loss')
     ax[1].set_yscale('log')

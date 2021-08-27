@@ -5,9 +5,9 @@ and used by the SVD autoencoder model.
 
 """
 
-from tensorflow.keras.layers import Dense, Dropout, Conv1D, Conv2D, MaxPool1D, MaxPool2D,\
-                         Flatten, UpSampling2D, UpSampling1D, Reshape,\
-                         BatchNormalization
+from tensorflow.keras.layers import Dense, Dropout, Conv1D, Conv2D, \
+                         MaxPool1D, MaxPool2D, Flatten, UpSampling2D, \
+                         UpSampling1D, Reshape, BatchNormalization
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras.models import Sequential
 
@@ -39,8 +39,8 @@ def build_dense_encoder(latent_dim, initializer, info=False,
 
 
 def build_conv_encoder_decoder(input_dim, latent_dim, initializer, info=False,
-                               act='relu', dense_act='relu', dropout=0.6, 
-                               final_act="linear"):
+                            act='relu', dense_act='relu', dropout=0.6, 
+                            final_act="linear"):
     """
     These show terrible performance
     """
@@ -194,10 +194,10 @@ def build_vinicius_encoder_decoder(input_dim, latent_dim, initializer,
     return encoder, decoder
 
 
-def build_deriv_encoder_decoder(input_dim, latent_dim, initializer,
-                                   info=False, act='elu', dense_act='elu',
-                                   dropout=0.6, reg=1e-3, batchnorm=True,
-                                   final_act="linear"):
+def build_deriv_encoder_decoder(input_dim, latent_dim, initializer, 
+                                info=False, act='elu', dense_act='elu',
+                                dropout=0.6, reg=1e-3, batchnorm=True,
+                                final_act="linear"):
 
     encoder = Sequential()
     encoder.add(Dense(8*8*128, activation=act,  

@@ -7,7 +7,6 @@ General utilities for package
 import numpy as np
 import keras.backend as K
 from keras.losses import mse
-from scipy.sparse.linalg import svds
 
 __author__ = "Zef Wolffs"
 __credits__ = ["Claire Heaney"]

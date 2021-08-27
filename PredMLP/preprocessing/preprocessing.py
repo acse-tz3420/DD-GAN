@@ -47,14 +47,17 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
     # discard rows with NaN values
     if dropnan:
         agg.dropna(inplace=True)
-    
+
     return agg
+
 
 def set_deriv(df, step):
     """
     Calculate the time derivative by (a_n+1 - a_n)/step
     """
     for i in range(1, 6):
-        df["var%d(deriv)"%i] = (df["var%d(t)"%i] - df["var%d(t-1)"%i]) / step
-        df = df.drop(columns=["var%d(t)"%i])
+        df["var%d(deriv)" % i] = (
+            df["var%d(t)" % i] - 
+            df["var%d(t-1)" % i]) / step
+        df = df.drop(columns=["var%d(t)" % i])
     return df

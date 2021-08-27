@@ -5,8 +5,8 @@ and used by the GAN model.
 
 """
 
-from tensorflow.keras.layers import Dense, Conv2DTranspose, Flatten, Reshape,\
-                         BatchNormalization, LeakyReLU
+from tensorflow.keras.layers import Dense, Conv2DTranspose, Reshape,\
+                                    BatchNormalization, LeakyReLU
 from tensorflow.keras.models import Sequential
 
 __author__ = "Tianyi Zhao"
@@ -27,14 +27,17 @@ def make_generator_model_deriv_1(latent_space=100):
 
     model.add(Reshape((3, 3, 256)))
 
-    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', output_padding=[0,0], use_bias=False))
+    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', 
+                              output_padding=[0, 0], use_bias=False))
     model.add(BatchNormalization())
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', output_padding=[0,0], use_bias=False))
+    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', 
+                              output_padding=[0, 0], use_bias=False))
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', use_bias=False, activation='tanh'))
+    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', 
+                              use_bias=False, activation='tanh'))
 
     return model
 
@@ -51,14 +54,18 @@ def make_generator_model_deriv_2(latent_space=100):
 
     model.add(Reshape((4, 4, 256)))
 
-    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', use_bias=False))
+    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', 
+                              use_bias=False))
     model.add(BatchNormalization())
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', use_bias=False))
+    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', 
+                              use_bias=False))
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', output_padding=[0,0], use_bias=False, activation='tanh'))
+    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', 
+                              output_padding=[0, 0], use_bias=False, 
+                              activation='tanh'))
 
     return model
 
@@ -75,14 +82,18 @@ def make_generator_model_deriv_3(latent_space=100):
 
     model.add(Reshape((5, 5, 256)))
 
-    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', use_bias=False))
+    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', 
+                              use_bias=False))
     model.add(BatchNormalization())
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', use_bias=False))
+    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', 
+                              use_bias=False))
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', output_padding=[1,1], use_bias=False, activation='tanh'))
+    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', 
+                              output_padding=[1, 1], use_bias=False, 
+                              activation='tanh'))
 
     return model
 
@@ -96,14 +107,18 @@ def make_generator_model_deriv_4(latent_space=100):
 
     model.add(Reshape((7, 7, 256)))
 
-    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', use_bias=False))
+    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', 
+                              use_bias=False))
     model.add(BatchNormalization())
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', output_padding=[0,0], use_bias=False))
+    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', 
+                              output_padding=[0, 0], use_bias=False))
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', output_padding=[0,0], use_bias=False, activation='tanh'))
+    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', 
+                              output_padding=[0, 0], use_bias=False, 
+                              activation='tanh'))
 
     return model
 
@@ -117,14 +132,18 @@ def make_generator_model_deriv_5(latent_space=100):
 
     model.add(Reshape((8, 8, 256)))
 
-    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', use_bias=False))
+    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', 
+                              use_bias=False))
     model.add(BatchNormalization())
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', output_padding=[0,0], use_bias=False))
+    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', 
+                              output_padding=[0, 0], use_bias=False))
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', output_padding=[1,1], use_bias=False, activation='tanh'))
+    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', 
+                              output_padding=[1, 1], use_bias=False, 
+                              activation='tanh'))
 
     return model
 
@@ -138,14 +157,17 @@ def make_generator_model_deriv_6(latent_space=100):
 
     model.add(Reshape((9, 9, 256)))
 
-    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', use_bias=False))
+    model.add(Conv2DTranspose(128, (3, 3), strides=(1, 1), padding='same', 
+                              use_bias=False))
     model.add(BatchNormalization())
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', use_bias=False))
+    model.add(Conv2DTranspose(64, (3, 3), strides=(2, 2), padding='same', 
+                              use_bias=False))
     model.add(LeakyReLU())
 
-    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', output_padding=[0,0], use_bias=False, activation='tanh'))
+    model.add(Conv2DTranspose(1, (3, 3), strides=(2, 2), padding='same', 
+                              output_padding=[0, 0], use_bias=False, 
+                              activation='tanh'))
 
     return model
-

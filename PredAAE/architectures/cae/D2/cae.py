@@ -7,8 +7,8 @@ Shapes are adjusted to the flow past a cylinder problem.
 
 """
 
-from tensorflow.keras.layers import Dense, Flatten, Reshape, Conv2D, UpSampling2D, \
-                         Cropping2D, MaxPool2D
+from tensorflow.keras.layers import Dense, Flatten, Reshape, Conv2D, \
+                         UpSampling2D, Cropping2D, MaxPool2D
 from tensorflow.keras.models import Sequential
 
 __author__ = "Zef Wolffs"
@@ -371,8 +371,9 @@ def build_densest_omata_encoder_decoder(input_shape, latent_dim, initializer,
     return encoder, decoder
 
 
-def build_deriv_densest_omata_encoder_decoder(input_shape, latent_dim, initializer,
-                                        info=False, act="elu", dense_act=None):
+def build_deriv_densest_omata_encoder_decoder(input_shape, latent_dim, 
+                                              initializer, info=False, 
+                                              act="elu", dense_act=None):
     """
     This encoder-decoder pair works for 55 by 42 grids
     """

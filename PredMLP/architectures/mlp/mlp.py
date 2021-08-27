@@ -18,9 +18,9 @@ __status__ = "Development"
 
 def make_mlp_model(n_input, n_output):
     model = Sequential()
-    #model.add(Flatten(input_shape=X_train.shape))
-    model.add(Dense(units=100, activation="relu", input_dim=n_input))    #units of hidden layer is 100
+    # units of hidden layer is 100
+    model.add(Dense(units=100, activation="relu", input_dim=n_input))
     model.add(Dense(units=100, activation="relu"))
-    model.add(Dense(units=n_output))    #output layer, dim=n_output
-    
+    model.add(Dense(units=n_output))    # output layer, dim=n_output
+
     return model
