@@ -2,7 +2,7 @@
 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-This is the repository of ACSE9 individual project. TSP-AI is a python machine learning package to implement the time series prediction of fluid flow.
+This is the repository of ACSE9 individual project. TSP-AI is a python machine learning package to implement time series prediction of fluid flow.
 
 ## Table of Contents
 
@@ -21,6 +21,8 @@ This individual project applys time derivative method and create time series mul
 The multi-step predictive GAN draws on ideas from recent research [Predictive GAN](https://arxiv.org/abs/2105.07729). The predictive AAE based on [Predictive AAE](https://github.com/acse-zrw20/DD-GAN-AE). Work flows of these two models are shown below:
 
 ![PredGAN](https://github.com/acse-tz3420/TSP-AI/blob/main/images/PredGAN.png)
+
+
 ![PredAAE](https://github.com/acse-tz3420/TSP-AI/blob/main/images/PredAAE.png)
 
 
@@ -73,18 +75,18 @@ Or you can choose to use `X-RAY-Classifier.ipynb`, which includes all functional
 
 ## Documentation
 
-To get documentation of X-RAY-Classifier, open `index.html` in `docs/html` after installation.
+To get documentation of TSP-AI, open `index.html` in `docs/html` after installation.
 
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/acse-2020/acse-4-x-ray-classification-softmax/issues/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/acse-tz3420/TSP-AI/issues/new) or submit PRs.
 
 ### Contributors
 
-This project exists thanks to all the [people](https://github.com/acse-2020/acse-4-x-ray-classification-softmax/graphs/contributors) who contributed.
+The author of this project is Tianyi Zhao. This project exists thanks to my supervisors, Dr. Claire Heaney and Prof. Christopher Pain, and all the people in DD-GAN group.
 
 
 ## License
 
-[MIT](LICENSE) © acse-2020 group Softmax
+[MIT](LICENSE) © acse-2020 Tianyi Zhao
