@@ -51,7 +51,7 @@ def optimize_coding(real_coding, loss_weight, latent_space,
     """
     latent_values = tf.random.normal([len(real_coding), latent_space])  
     latent_values = tf.Variable(latent_values)
-    
+
     loss = []
     for epoch in range(5000):
         loss.append(opt_step(latent_values, real_coding, loss_weight, 
@@ -72,5 +72,5 @@ def optimize_coding_multi(latent_values, real_coding, loss_weight, epochs,
     for epoch in range(epochs):
         opt_step(latent_values, real_coding, loss_weight, 
                  mse, generator, optimizer, ntimes, ninput)
-        
+
     return latent_values

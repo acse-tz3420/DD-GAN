@@ -119,7 +119,7 @@ def train(dataset, epochs, BATCH_SIZE, latent_space, generator_mean_loss,
 
         # Global variables are used below
         if epoch % 1000 == 0: 
-    
+
             # Save model
             gan.save('ganmodels/'+notebookName[:-6]+'-'+str(epoch)+'.h5')    
 

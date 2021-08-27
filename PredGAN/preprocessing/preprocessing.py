@@ -23,7 +23,7 @@ def calculate_deriv(X_train, step):
     for i in range(len(X_deriv)):
         for j in range(5):
             X_deriv[i].append((X_train[i+1, j] - X_train[i, j]) / step)
-    
+
     return np.array(X_deriv)
 
 
@@ -32,5 +32,5 @@ def concat_timesteps(X_train, ntimes, step):
     for i in range(len(X_train)-ntimes*step):
         X_current = X_train[i:i+ntimes*step:step]  # [start_idx:end_idx:step]
         X_train_concat.append(X_current)
-    
+
     return np.array(X_train_concat)

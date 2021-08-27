@@ -22,5 +22,5 @@ jobs:
           pip install flake8
       - name: Lint with flake8
         run: |
-          flake8 PredGAN --ignore E501,E722,E226
-          flake8 PredMLP --ignore E501,E722,E226
+          flake8 PredGAN --ignore E501,E722,E226,W291
+          flake8 PredMLP --ignore E501,E722,E226,W291
