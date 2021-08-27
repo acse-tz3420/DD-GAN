@@ -58,7 +58,7 @@ Folder `worklog` contains the working logs, weekly meeting notes, and other resu
 
 ## Documentation
 
-To get documentation of TSP-AI, open `index.html` in `docs/html` after installation.
+Find the [documentation](https://github.com/acse-tz3420/TSP-AI/blob/main/docs/build/html/index.html) of TSP-AI. Open the `index.html` file after installation.
 
 
 ## Contributing
