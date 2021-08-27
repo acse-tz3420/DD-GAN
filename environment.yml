@@ -1,4 +1,4 @@
-name: py3ml
+name: tspai
 channels:
   - conda-forge
   - defaults
