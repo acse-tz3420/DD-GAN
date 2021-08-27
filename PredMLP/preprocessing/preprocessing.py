@@ -57,7 +57,7 @@ def set_deriv(df, step):
     """
     for i in range(1, 6):
         df["var%d(deriv)" % i] = (
-            df["var%d(t)" % i] - 
-            df["var%d(t-1)" % i]) / step
+            df["var%d(t)" % i]
+            - df["var%d(t-1)" % i]) / step
         df = df.drop(columns=["var%d(t)" % i])
     return df
