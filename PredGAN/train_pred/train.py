@@ -41,6 +41,10 @@ def generator_loss(fake_output):
 def train_step(batch, BATCH_SIZE, latent_space, generator_mean_loss, \
              discriminator_mean_loss, generator_optimizer, discriminator_optimizer, \
              generator, discriminator):
+    """
+    Notice the use of `tf.function`
+    This annotation causes the function to be "compiled".
+    """
     noise = tf.random.normal([BATCH_SIZE, latent_space])
 
     with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
