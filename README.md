@@ -16,9 +16,9 @@ This is the repository of ACSE9 individual project. TSP-AI is a python machine l
 
 ## About TSP-AI
 
-This individual project applys time derivative method and create time series multi-step prediction model, using MLP, GAN or AAE, respectively. NIROM is constructed by applying POD to snapshots of numerical simulation for the flow past a cylinder. The time derivative method is applied to the prediction, and the difference between the result of directly predicting the next time level is compared with the time derivative method to assess its validity. These package include machine learning modules to data processing, model training and multi-step prediction with `Tensorflow` and `Keras`.
+This individual project applys time derivative method and create time series multi-step prediction model, using MLP, GAN or AAE, respectively. NIROM is constructed by applying POD to snapshots of numerical simulation for the flow past a cylinder. The time derivative method is applied to the prediction, and the difference between the result of directly predicting the next time level is compared with the time derivative method to assess its validity. These package include machine learning modules to data processing, model training and multi-step prediction with `Tensorflow` and `Keras`. The model uses GPU for acceleration during training, but this is not a necessary item.
 
-The multi-step predictive GAN draws on ideas from recent research [Predictive GAN](https://arxiv.org/abs/2105.07729). The predictive AAE based on [Predictive AAE](https://github.com/acse-zrw20/DD-GAN-AE). Work flows of these two models are shown below:
+The multi-step predictive GAN draws on ideas from recent research [Predictive GAN](https://arxiv.org/abs/2105.07729). The predictive AAE is based on [Predictive AAE](https://github.com/acse-zrw20/DD-GAN-AE). Work flows of these two models are shown below:
 
 ![PredGAN](https://github.com/acse-tz3420/TSP-AI/blob/main/images/PredGAN.png)
 
@@ -33,7 +33,7 @@ To install TSP-AI, run the following commands:
 ```
 # get the code
 git clone https://github.com/acse-tz3420/TSP-AI.git
-cd TSP-AI
+cd ./TSP-AI
 
 # install pre-requisites
  $ conda env create -f environment.yml 
@@ -42,35 +42,18 @@ cd TSP-AI
 ```
 
 
-### Data Downloading
-
-To download the data, first go to [kaggle](https://www.kaggle.com/<username>/account) and select 'Create API Token'. This will trigger the download of `kaggle.json`, a file containing your API credentials which you must upload to colab. Then you must move this file to your root directory and request a forced update of kaggle in pip to download your data correctly. Simply run:
-
-```
-bash download_data.sh
-```
-
-
 ## Usage
 
-Use `python main.py` in `acse_softmax` to train model and use `--help` option to see all the parameters that can be changed.
+Usage examples can be found in `examples` folder. Simply run the notebooks to train the model, make prediction and see results. The notebooks in this folder contain the final results included in [Final Report](https://github.com/acse-2020/acse2020-acse9-finalreport-acse-tz3420/blob/main/TianyiZhao_ACSE9_FinalReport.pdf).
 
-```bash
-usage: Covid_CT_Classifier_Softmax [-h] [-version] [-s S] [-lr LR] [-m M] [-bs BS] [-ts TS] [-e E]
+### Data Pre-processing and Reconstrction
 
-optional arguments:
-  -h, --help  show this help message and exit
-  -version    show program's version number and exit
-  -s S        seed
-  -lr LR      learning rate
-  -m M        momentum
-  -bs BS      batch size
-  -ts TS      test batch size
-  -e E        epoch
+The flow past a cylinder data used as test case is in `data` folder. For separated pre-processing and post-processing modules, the source code emanates from Dr. Heaney and was compiled by Zef Wolffs and Jon Atli Tomasson in DD-GAN team, with some modifications from Tianyi Zhao. Please see `preprocessing` folder for futher instructions.
 
-```
 
-Or you can choose to use `X-RAY-Classifier.ipynb`, which includes all functional parts, as well as user guidence, process of tuning parameters and strategy to select the final submission.
+### Working Logs
+
+Folder `worklog` contains the working logs, weekly meeting notes, and other results mentioned in [Final Report](https://github.com/acse-2020/acse2020-acse9-finalreport-acse-tz3420/blob/main/TianyiZhao_ACSE9_FinalReport.pdf). These could be a proof of the author's continuous work during the three months.
 
 
 ## Documentation
