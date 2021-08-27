@@ -12,7 +12,7 @@ def test_pod_shape():
     """
     Test if the pod coeffs shape correct
     """
-    data_dir = './../data/preprocessed/single_domain/'
+    data_dir = 'data/preprocessed/single_domain/'
     pod_coeffs = np.load(data_dir + 'pod_coeffs_1.npy')
 
     npod = 5
@@ -25,7 +25,7 @@ def test_gan_input_shape():
     """
     Tests if the input dataset shape correct
     """
-    data_dir = './../data/preprocessed/single_domain/'
+    data_dir = 'data/preprocessed/single_domain/'
     pod_coeffs = np.load(data_dir + 'pod_coeffs_1.npy')
 
     npod = 5
@@ -64,8 +64,9 @@ def test_gan_generator_model():
 
     noise = tf.random.normal([1, 100])
     generated_image = generator(noise, training=False)
+    shape = np.array(generated_image[0, :, :, 0]).shape
 
-    assert (generated_image[0, :, :, 0].shape == (0, ntimes, ninput, 0))
+    assert (shape == (ntimes, ninput))
 
 
 def test_gan_discriminator_model():
