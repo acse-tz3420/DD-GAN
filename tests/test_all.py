@@ -18,7 +18,7 @@ def test_pod_shape():
     npod = 5
     X_pod = np.transpose(pod_coeffs.reshape(10, 1999)[:npod])
 
-    assert (X_pod.shape == (len(pod_coeffs[:,:,0]), npod))
+    assert (X_pod.shape == (len(pod_coeffs[0,0,:]), npod))
 
 
 def test_gan_input_shape():
