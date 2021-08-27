@@ -18,8 +18,8 @@ jobs:
     - name: Install data & dependencies
       run: |
         pip install pytest
-        conda env create -f environment.yml
-        conda activate tspai
+        pip install tensorflow
+        pip install numpy
 
     # Run tests
     - name: run tests
