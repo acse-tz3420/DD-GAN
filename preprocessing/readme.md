@@ -1,14 +1,14 @@
-## Preprocessing
+## Preprocessing and Reconstruction
 
 In this folder we use some legacy code for preprocessing. This only has to be ran once. Please use python 2 with numpy installed for executing the following commands.
 
 ### Usage
 
-First thing to do is to descend into preprocessing source directory
+First thing to do is to descend into preprocessing source directory:
 
 ```cd preprocessing/src```
 
-and install the requirements
+and install the requirements:
 
 ```pip install -r requirements.txt```
 
@@ -19,6 +19,11 @@ To compile the fortran library for python to use (u2r is the library):
 To get POD coefficients execute the following to see the usage of the script that wraps Fortran:
 
 ```python2 get_pod_coeffs.py -h```
+
+After getting predciton results, reconstrucing snapshots with:
+
+```python2 reconstruct.py```
+
 
 
 ### Some common problems and fixes:
